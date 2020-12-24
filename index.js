@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs')
-const client = new Discord.Client({disableEveryone: true});
+const client = new Discord.Client({ ws: { intents: intent_list } })
 client.commands = new Discord.Collection();
 const info = require('./Discord.js/Packing.js')
 const { prefix } = require('./config/bot_info.json')
