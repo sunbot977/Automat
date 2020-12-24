@@ -7,22 +7,9 @@ const { prefix } = require('./config/bot_info.json')
 const token = process.env.token
 
 client.on('ready', () => {
-	client.user.setPresence({ activity: { name: "!명령어를 입력해보세요." }, status: "online"})
-	fs.readFile('./Discord.js/LICENSE', function(err, data) {
-		if(err) {
-			console.log("!! 라이센스 파일이 존재하지 않습니다. 클라이언트를 종료합니다. !!")
-			process.exit()
-			return
-		}
-		var array = data.toString().split("\n");
-		if(!array[0].includes("GNU GENERAL PUBLIC LICENSE")) { 
-			console.log("!! 라이센스 파일이 존재하지 않습니다. 클라이언트를 종료합니다. !!") 
-			process.exit()
-		} else {
-			console.log("\n켰다\n")
-		}
+		console.log("\n켰다\n")
+		client.user.setPresence({ activity: { name: "!명령어를 입력해보세요." }, status: "online"})
 	})
-});
 
 fs.readdir("./commands/", (err, files) => {
 
