@@ -1,0 +1,17 @@
+## 모듈 설치 방법 ##
+
+1. https://nodejs.org/ko/ 사이트에 가서 LTS 라고 적혀있는거 다운로드
+2. 설치가 완료되었으면 Ctrl + R을 같이 눌러 실행창 연다음 cmd 입력
+3. cmd창에 아래 명령어 입력
+
+npm install discord.js
+npm install cheerio
+npm install request
+npm install sqlite3
+npm install fs
+npm install path
+
+
+/ 나머지 설정은 설명서 참고하세요. /
+
+MADE BY WhiteKJ#0001(Discord)
