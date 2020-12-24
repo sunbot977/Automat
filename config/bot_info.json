@@ -1,5 +1,5 @@
 {
-    "token": "process.env.tokn",
+    "token": "process.env.tokn;",
     "prefix": "!",
     "owners": "641939160348885004",
     "reg_ch": "790502597684363264",
