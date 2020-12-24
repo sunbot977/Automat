@@ -1,15 +1,27 @@
 const Discord = require('discord.js');
 const fs = require('fs')
-const client = new Discord.Client({ ws: { intents: intent_list } })
+const client = new Discord.Client({disableEveryone: true});
 client.commands = new Discord.Collection();
 const info = require('./Discord.js/Packing.js')
 const { prefix } = require('./config/bot_info.json')
 const token = process.env.token
 
 client.on('ready', () => {
-		console.log("\n켰다\n")
-		client.user.setPresence({ activity: { name: "!명령어를 입력해보세요." }, status: "online"})
+	fs.readFile('./Discord.js/LICENSE', function(err, data) {
+		if(err) {
+			console.log("!! 라이센스 파일이 존재하지 않습니다. 클라이언트를 종료합니다. !!")
+			process.exit()
+			return
+		}
+		var array = data.toString().split("\n");
+		if(!array[0].includes("GNU GENERAL PUBLIC LICENSE")) { 
+			console.log("!! 라이센스 파일이 존재하지 않습니다. 클라이언트를 종료합니다. !!") 
+			process.exit()
+		} else {
+			console.log("\nBOT IS READY\n")
+		}
 	})
+});
 
 fs.readdir("./commands/", (err, files) => {
 
