@@ -19,7 +19,7 @@ client.on('ready', () => {
 			process.exit()
 		} else {
 			console.log("\nBOT IS READY\n")
-			client.user.setPresence({ activity: { name: "!명령어를 입력해보세요." }, status: "online : twitch 방송 중"})
+			client.user.setPresence({ activity: { name: "!명령어를 입력해보세요." }, status: "on air"})
 		}
 	})
 });
