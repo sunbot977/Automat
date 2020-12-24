@@ -19,6 +19,7 @@ client.on('ready', () => {
 			process.exit()
 		} else {
 			console.log("\nBOT IS READY\n")
+			client.user.setPresence({ activity: { name: "!명령어를 입력해보세요." }, status: "TWITCH 방송 중"})
 		}
 	})
 });
@@ -50,4 +51,24 @@ client.on('message', message =>{
     if(commandfile) commandfile.run(client,message,args);
 
 });
+ if (message.content == "?명령어") {
+    let helpImg = "https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png"
+    let commandList = [
+      { name: "!가입", desc: "자판기에 가입합니다." },
+	  { name: "!목록", desc: "제품목록을 보여줍니다." },
+	  { name: "!구매", desc: "!구매 (제품명)" },
+      { name: "!명령어", desc: "도움말(help)" },
+      { name: "!충전신청", desc: "!충전신청 (가격) (할말)"},
+    ]
+    let commandStr = ""
+    let embed = new Discord.MessageEmbed().setAuthor("Help of Automat", helpImg).setColor("#C8E6C9").setFooter(`Automat 📠`).setTimestamp()
+
+    commandList.forEach((x) => {
+      commandStr += `• \`\`${changeCommandStringLength(`${x.name}`)}\`\` : **${x.desc}**\n`
+    })
+
+    embed.addField("Commands: ", commandStr)
+
+    message.channel.send(embed)
+  }
 client.login(token);
