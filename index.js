@@ -3,7 +3,7 @@ const fs = require('fs')
 const client = new Discord.Client({disableEveryone: true});
 client.commands = new Discord.Collection();
 const info = require('./Discord.js/Packing.js')
-const { token , prefix } = require('./config/bot_info.json')
+const { prefix } = require('./config/bot_info.json')
 const token = process.env.token
 
 client.on('ready', () => {
